@@ -82,10 +82,12 @@ class _MyCustomFormState extends State<MyLoginPage> {
           height: 42.0,
           onPressed: () {
             if (_validate()) {
-              if(myUserNameController.text.toString() == "atchyutmaddukuri@gmail.com" && myPasswordController.text.toString() == "Jamesbond_007"){
-                Navigator.push(
+              if(myUserNameController.text.toString() == "admin@atdrive.com" && myPasswordController.text.toString() == "atdrive"){
+                Navigator.pushReplacement(
 
                     context, MaterialPageRoute(builder: (context) => HomePage()));
+              }else{
+                _showToast("Please verify login details");
               }
             } else {
               _showToast("Please enter valid inputs");

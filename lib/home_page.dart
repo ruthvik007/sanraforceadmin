@@ -50,6 +50,9 @@ class _MyCategoryForm extends State<Category> {
             child: new Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
+                new SizedBox(
+                  height: 30,
+                ),
                 Text(
                   'Field Reports',
                   style: TextStyle(
@@ -93,7 +96,7 @@ class _MyCategoryForm extends State<Category> {
               },
             ),
             SizedBox(
-              height: 8.0,
+              height: 30.0,
             ),
             card_list_four
           ],

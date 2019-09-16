@@ -89,7 +89,7 @@ class _MyFieldReportForm extends State<MyFieldReport> {
   Future<List<ReportData>> fetchProducts(
       http.Client client, bool isSortRequired, bool isRefresh) async {
     print("entered api section");
-    String limit = "1";
+    String limit = "1000";
     String offset = "0";
     bool sortByFollowUpDate = isSortRequired;
 
@@ -173,7 +173,7 @@ class _MyFieldReportForm extends State<MyFieldReport> {
                             children: <Widget>[
                               new Row(
                                 children: <Widget>[
-                                  //getImage(list[Index]),
+                                  getImage(list[Index]),
                                   Padding(
                                     padding:
                                         new EdgeInsets.fromLTRB(15, 0, 0, 0),
@@ -195,17 +195,7 @@ class _MyFieldReportForm extends State<MyFieldReport> {
                               new Wrap(
                                 direction: Axis.horizontal,
                                 children: <Widget>[
-                                  new GestureDetector(
-                                    child: Padding(
-                                      padding:
-                                          new EdgeInsets.fromLTRB(0, 5, 10, 5),
-                                      child: getRoundedText('Follow Up'),
-                                    ),
-                                    onTap: () {
-                                      print(list[Index].Report.reporter_id);
 
-                                    },
-                                  ),
                                   new GestureDetector(
                                     child: Padding(
                                       padding:
@@ -218,7 +208,7 @@ class _MyFieldReportForm extends State<MyFieldReport> {
                                               builder: (context) =>
                                                   ReportDetail(
                                                       reportItem:
-                                                          list[Index])));
+                                                      list[Index])));
                                     },
                                   )
                                 ],
@@ -276,7 +266,7 @@ class _MyFieldReportForm extends State<MyFieldReport> {
     return prefs.get('user_id');
   }
 
-  /*Widget getImage(ReportData list) {
+  Widget getImage(ReportData list) {
     var image;
     if (list.Farmer != null &&
         list.Farmer.Farmer_Crop != null &&
@@ -298,7 +288,7 @@ class _MyFieldReportForm extends State<MyFieldReport> {
     }
     return image;
   }
-*/
+
   Widget getRoundedText(String buttonName) {
     return new Container(
       child: new Text(

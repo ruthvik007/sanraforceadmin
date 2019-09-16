@@ -67,7 +67,7 @@ class FarmerReport {
       this.farm_address,
       this.lattitude,
       this.longitude,
-      });
+      this.Farmer_Crop});
 
   factory FarmerReport.fromJson(Map<String, dynamic> json) {
     return FarmerReport(
@@ -77,7 +77,7 @@ class FarmerReport {
         farm_address: json['farm_address'],
         lattitude: json['lattitude'],
         longitude: json['longitude'],
-        );
+        Farmer_Crop: FarmerCrop.fromJson(json['Farmer_Crop']));
   }
 }
 
@@ -147,16 +147,16 @@ class FollowedReport {
   String next_followup_date;
   ReportDetailedData Report;
 
-  FollowedReport(
-      {this.id,
-      this.report_id,
-      this.feedback,
-      this.reason,
-      this.recommendation,
-      this.followed_suggetion,
-      this.next_followed_date,
-      this.next_followup_date,
-      });
+  FollowedReport({
+    this.id,
+    this.report_id,
+    this.feedback,
+    this.reason,
+    this.recommendation,
+    this.followed_suggetion,
+    this.next_followed_date,
+    this.next_followup_date,
+  });
 
   factory FollowedReport.fromJson(Map<String, dynamic> json) {
     return FollowedReport(
@@ -168,7 +168,6 @@ class FollowedReport {
       followed_suggetion: json['followed_suggetion'],
       next_followed_date: json['next_followed_date'],
       next_followup_date: json['next_followup_date'],
-
     );
   }
 }
